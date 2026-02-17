@@ -1,30 +1,31 @@
 public abstract class Service {
+    protected String serviceName;
+    protected int serviceId;
+    protected boolean active;
 
-    // TODO: declare private fields
-    // serviceName
-    // serviceId
-    // isActive
+    public Service(String serviceName, int serviceId) {
+        this.serviceName = serviceName;
+        this.serviceId = serviceId;
+        this.active = false;
+    }
 
+    public void activateService() {
+        active = true;
+        System.out.println(serviceName + " activated.");
+    }
 
-    // TODO: constructor
+    public void deactivateService() {
+        active = false;
+        System.out.println(serviceName + " deactivated.");
+    }
 
+    public boolean isActive() {
+        return active;
+    }
 
-    // TODO: activateService()
-    // should set isActive = true
-    // print activation message
+    public String getServiceName() {
+        return serviceName;
+    }
 
-
-    // TODO: deactivateService()
-    // should set isActive = false
-    // print deactivation message
-
-
-    // TODO: getter for serviceName
-
-
-    // TODO: getter for isActive
-
-
-    // TODO: abstract method performService()
-
+    public abstract void performService();
 }
